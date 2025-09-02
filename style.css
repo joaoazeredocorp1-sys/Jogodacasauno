@@ -94,5 +94,65 @@ button:hover {
     display: block;
     margin: 0 auto 20px;
 }
+/* Tema claro */
+body.claro {
+    background: #f4f4f4;
+    color: #111;
+}
+
+body.claro::before {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+body.claro .container {
+    background: rgba(255, 255, 255, 0.85);
+    color: #000;
+}
+
+body.claro .slot {
+    background: #e0e0e0;
+    color: #000;
+}
+
+body.claro .pix-box {
+    background: #fff;
+    box-shadow: 0 0 5px #aaa;
+}
+
+/* Histórico de jogadas */
+.historico {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.historico ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .slot {
+        font-size: 40px;
+        width: 50px;
+        height: 50px;
+        margin: 0 5px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .pix-box input {
+        font-size: 14px;
+    }
+}
 
 
