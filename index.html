@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de pagamento -->
+    <div id="tela-pagamento" class="container">
+        <!-- Logo também na tela inicial -->
+        <img src="logo.png" alt="Jogo da Casa" class="logo">
+
+        <h2>🎰 Bem-vindo ao Jogo da Casa 🎰</h2>
+        <p>Para começar a jogar, envie <strong>mínimo R$0,30</strong> via Pix:</p>
+        <div class="pix-box">
+            <p>📥 <strong>Chave Pix:</strong></p>
+            <input type="text" value="pewzacatelco078@gmail.com" id="chavePix" readonly>
+            <button onclick="copiarPix()">📋 Copiar Pix</button>
+        </div>
+        <br>
+        <button id="btnLiberar" onclick="liberarJogo()" style="display: none;">✅ Já paguei</button>
+    </div>
+
+    <!-- Jogo (inicialmente escondido) -->
+    <div id="tela-jogo" class="container" style="display: none;">
+        <!-- Logo no jogo -->
+        <img src="logo.png" alt="Jogo da Casa" class="logo">
+        
+        <p>Saldo: R$ <span id="saldo">100</span></p>
+        <div class="slot-machine">
+            <div class="slot" id="slot1">🍒</div>
+            <div class="slot" id="slot2">🍋</div>
+            <div class="slot" id="slot3">🍇</div>
+        </div>
+        <button onclick="girar()">GIRAR 🎲</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
