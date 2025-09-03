@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo da Casa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tela-pagamento" class="container">
+        <img src="logo.png" alt="Jogo da Casa" class="logo">
+        <h2>🎰 Deposite para jogar 🎰</h2>
+        <p>Depósito mínimo: R$0,50 | Saldo mínimo para apostar: R$5,00</p>
+        <div class="pix-box">
+            <input type="number" id="valorDeposito" step="0.01" min="0.5" placeholder="Ex: 10.00">
+            <button onclick="gerarPix()">Gerar Chave Pix</button>
+        </div>
+        <div id="areaPix" style="display:none; margin-top:15px;">
+            <input type="text" id="chavePix" readonly>
+            <button onclick="copiarPix()">📋 Copiar Pix</button>
+            <br><br>
+            <button id="btnLiberar" onclick="liberarJogo()" style="display:none;">✅ Já paguei</button>
+        </div>
+    </div>
+
+    <div id="tela-jogo" class="container" style="display:none;">
+        <img src="logo.png" alt="Jogo da Casa" class="logo">
+        <p>Saldo: R$ <span id="saldo">0.00</span></p>
+        <div class="slot-machine">
+            <div class="slot" id="slot1">🍒</div>
+            <div class="slot" id="slot2">🍋</div>
+            <div class="slot" id="slot3">🍇</div>
+        </div>
+        <button onclick="girar()">GIRAR 🎲</button>
+        <p id="mensagem"></p>
+        <div class="historico">
+            <h3>🧾 Histórico</h3>
+            <ul id="historico-lista"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
