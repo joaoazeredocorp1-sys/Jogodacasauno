@@ -6,28 +6,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Tela de pagamento -->
     <div id="tela-pagamento" class="container">
-        <!-- Logo também na tela inicial -->
         <img src="logo.png" alt="Jogo da Casa" class="logo">
-
         <h2>🎰 Bem-vindo ao Jogo da Casa 🎰</h2>
-        <p>Para começar a jogar, envie <strong>mínimo R$0,30</strong> via Pix:</p>
+        <p>Digite o valor que deseja depositar.<br>
+           Depósito mínimo: R$0,50<br>
+           Saldo mínimo para apostar: R$5,00
+        </p>
         <div class="pix-box">
-            <p>📥 <strong>Chave Pix:</strong></p>
-            <input type="text" value="pewzacatelco078@gmail.com" id="chavePix" readonly>
-            <button onclick="copiarPix()">📋 Copiar Pix</button>
+            <label for="valorDeposito">💵 Valor do Depósito:</label><br>
+            <input type="number" id="valorDeposito" step="0.01" min="0.50" placeholder="Ex: 10.00">
+            <button onclick="gerarPix()">Gerar Chave Pix</button>
         </div>
-        <br>
-        <button id="btnLiberar" onclick="liberarJogo()" style="display: none;">✅ Já paguei</button>
+        <div id="areaPix" style="display:none; margin-top:15px;">
+            <p>📥 <strong>Chave Pix gerada:</strong></p>
+            <input type="text" id="chavePix" readonly>
+            <button onclick="copiarPix()">📋 Copiar Pix</button>
+            <br><br>
+            <button id="btnLiberar" onclick="liberarJogo()" style="display:none;">✅ Já paguei</button>
+        </div>
     </div>
 
-    <!-- Jogo (inicialmente escondido) -->
     <div id="tela-jogo" class="container" style="display: none;">
-        <!-- Logo no jogo -->
         <img src="logo.png" alt="Jogo da Casa" class="logo">
-        
-        <p>Saldo: R$ <span id="saldo">100</span></p>
+        <p>Saldo: R$ <span id="saldo">0.00</span></p>
         <div class="slot-machine">
             <div class="slot" id="slot1">🍒</div>
             <div class="slot" id="slot2">🍋</div>
@@ -35,9 +37,11 @@
         </div>
         <button onclick="girar()">GIRAR 🎲</button>
         <p id="mensagem"></p>
+        <div class="historico">
+            <h3>🧾 Histórico</h3>
+            <ul id="historico-lista"></ul>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
-
